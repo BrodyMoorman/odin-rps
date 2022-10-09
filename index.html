@@ -4,26 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
     <title>Document</title>
 </head>
 <body>
- <div>
-    <button class="btn" id="rockbtn">Rock</button>
-    <button class="btn" id="paperbtn">Paper</button>
-    <button class="btn" id="scissors">Scissors</button>
-    <div id="round-result"></div>
-    <div>
+    <h1>Rock, Paper, Scissors</h1>
+<div class="main-content">
+    <div class="score-card">
         <h3>Player Score</h3>
         <div id="player-score">0</div>
         
     </div>
-    <div>
-        <h3>Computer Score</h3>
-        <div id="computer-score">0</div>
-        
+ <div class="main-card">
+    <h3>Player Decision</h3>
+    <div class="button-container">
+        <div class="btn" id="rockbtn">Rock</div>
+        <div class="btn" id="paperbtn">Paper</div>
+        <div class="btn" id="scissors">Scissors</div>
     </div>
+    <h3>Computer Decision</h3>
+    <p id="comp-decision"></p>
+
+    <h4>Round Result</h4>
+    <div id="round-result"></div>
+    
+    
+
  </div>   
+ <div class="score-card">
+    <h3>Computer Score</h3>
+    <div id="computer-score">0</div>
+    
+</div>
+</div>
     
 </body>
 </html>

@@ -1,6 +1,6 @@
     let playerScore = 0;
     let computerScore = 0;
-    const buttons = document.querySelectorAll('button');
+    const buttons = document.querySelectorAll(".btn");
     buttons.forEach((button) =>{button.addEventListener('click', (e) => {
         let userChoice = button.innerHTML.toLowerCase();
         let computerChoice = getComputerChoice();
@@ -24,12 +24,16 @@
 
         
     function getComputerChoice(){
+        const output = document.getElementById("comp-decision");
         const rand = Math.floor(Math.random() * 3);
         if(rand === 0){
+            output.innerHTML = "Rock"
             return "rock";
         }else if(rand === 1){
+            output.innerHTML = "Paper"
             return "paper";
         }else if(rand === 2){
+            output.innerHTML = "Scissors"
             return "scissors";
         }
     }
