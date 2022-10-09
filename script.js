@@ -1,5 +1,26 @@
+    let playerScore = 0;
+    let computerScore = 0;
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach((button) =>{button.addEventListener('click', (e) => {
+        let userChoice = button.innerHTML.toLowerCase();
+        let computerChoice = getComputerChoice();
+        playRound(userChoice, computerChoice);
+        updateScore();
+        if(playerScore === 5){
+            alert("You Win")
+            playerScore = 0;
+            computerScore = 0;
+            updateScore();
+        }
+        if(computerScore === 5){
+            alert("Computer Wins")
+            playerScore = 0;
+            computerScore = 0;
+            updateScore();
+        }
 
-    game();
+    })} )
+   
 
         
     function getComputerChoice(){
@@ -18,23 +39,24 @@
         return temp;
     }
     function playRound(playerChoice, computerChoice){
+        const output = document.getElementById("round-result")
         if(playerChoice === computerChoice ){
-            console.log("Its a tie")
+            output.innerHTML = "Its a tie";
         }
         if((playerChoice==="rock" && computerChoice === "scissors")||(playerChoice==="paper" && computerChoice === "rock")||(playerChoice==="scissors" && computerChoice === "paper")){
-            console.log("You Win!")
+            output.innerHTML = "You Win!";
+            playerScore++
         }
         if((computerChoice==="rock" && playerChoice === "scissors")||(computerChoice==="paper" && playerChoice === "rock")||(computerChoice==="scissors" && playerChoice === "paper")){
-            console.log("You lose!")
+            output.innerHTML = "You lose!"
+            computerScore++
         }
     }
-    function game(){
-        let playerScore = 0;
-        let compterScore = 0;
-        for (let i = 0; i < 5; i++){
-            let computerChoice = getComputerChoice();
-            let userChoice = getUserChoice();
-    
-            playRound(userChoice, computerChoice);
-        }
+
+    function updateScore(){
+        const playerScoreBox = document.getElementById("player-score")
+        const computerScoreBox = document.getElementById("computer-score")
+        playerScoreBox.innerHTML = playerScore
+        computerScoreBox.innerHTML = computerScore
+
     }
